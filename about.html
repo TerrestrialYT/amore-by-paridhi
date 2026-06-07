@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Amore By Paridhi — Bespoke Eggless Bakery in Raipur</title>
+    <!-- FIX 5.1: Added missing meta description -->
+    <meta name="description" content="Learn the story behind Amore By Paridhi — a 100% eggless bespoke bakery based in Raipur, Chhattisgarh. FSSAI certified, crafted with love and the finest ingredients.">
+
+    <!-- Open Graph / Social Meta (FIX 5.3) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us | Amore By Paridhi">
+    <meta property="og:description" content="Learn the story behind Amore By Paridhi — a 100% eggless bespoke bakery in Raipur, Chhattisgarh.">
+    <meta property="og:image" content="/images/cake1.jpg">
+    <meta property="og:url" content="https://terrestrialyt.github.io/Amore-By-Paridhi/about.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical (FIX 5.5) -->
+    <link rel="canonical" href="https://terrestrialyt.github.io/Amore-By-Paridhi/about.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Vite / Tailwind CSS entry point -->
+    <link href="/src/index.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #fdfbf7;
+            color: #4a332a;
+        }
+        /* Mobile nav overlay */
+        #mobile-nav {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #mobile-nav.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px);
+        }
+        #mobile-nav.open {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-espresso bg-cream selection:bg-blush selection:text-espresso flex flex-col min-h-screen">
+
+    <!-- ===================== HEADER ===================== -->
+    <header id="site-header" class="fixed w-full top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-espresso/10 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+            <div class="flex justify-between items-center h-[70px]">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="./index.html" class="flex items-center space-x-3">
+                        <img src="/images/logo.jpg" alt="Amore By Paridhi Logo" class="h-14 w-auto object-contain rounded-full shadow-sm bg-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/fdfbf7/4a332a?text=Logo';">
+                        <span class="font-serif text-lg md:text-xl font-bold tracking-widest text-espresso uppercase hidden sm:block">Amore By Paridhi</span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="./index.html" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">Home</a>
+                    <a href="/#menu" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">Menu</a>
+                    <a href="#" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">About Us</a>
+                    <a href="/#contact" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">Contact</a>
+                </nav>
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="bg-espresso text-cream px-6 py-2.5 rounded-full text-xs font-bold hover:bg-espresso/80 transition-colors shadow-sm uppercase tracking-widest">
+                        Order on Instagram
+                    </a>
+                </div>
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav" class="text-espresso focus:outline-none p-2 rounded-lg hover:bg-blush/20 transition-colors">
+                        <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Panel (FIX 2.3) -->
+        <div id="mobile-nav" class="hidden md:hidden bg-cream border-t border-espresso/10 shadow-lg">
+            <nav class="max-w-[1400px] mx-auto px-4 py-6 flex flex-col space-y-4">
+                <a href="./index.html" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">Home</a>
+                <a href="/#menu" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">Menu</a>
+                <a href="#" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">About Us</a>
+                <a href="/#contact" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">Contact</a>
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="inline-block text-center bg-espresso text-cream px-6 py-3 rounded-full text-xs font-bold hover:bg-espresso/80 transition-colors shadow-sm uppercase tracking-widest mt-2">
+                    Order on Instagram
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================== MAIN ABOUT CONTENT ===================== -->
+    <main class="flex-1 max-w-[1000px] mx-auto w-full px-4 md:px-6 lg:px-10 pt-28 md:pt-36 lg:pt-40 pb-20">
+
+        <div class="flex flex-col items-center justify-center text-center mb-16" data-aos="fade-up">
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-espresso mb-6">Our Story</h1>
+            <div class="w-20 h-0.5 bg-blush mb-8"></div>
+            <p class="font-sans text-espresso/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+                Baking with passion, precision, and <span class="italic font-medium">love</span>. <br class="hidden md:block">Welcome to Amore By Paridhi.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <div class="order-2 md:order-1 flex flex-col space-y-6" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="font-serif text-3xl text-espresso">The Journey</h2>
+                <p class="font-sans text-espresso/80 text-base leading-relaxed">
+                    What started as a modest home kitchen experiment quickly blossomed into a beloved bespoke bakery here in Raipur. At Amore By Paridhi, we believe that desserts are more than just an end to a meal—they are a centerpiece of celebration, a gesture of affection, and a moment of pure joy.
+                </p>
+                <p class="font-sans text-espresso/80 text-base leading-relaxed">
+                    Our commitment is simple: creating luxurious, 100% eggless baked goods that compromise on nothing. Every cake, dessert jar, and pastry that leaves our kitchen is hand-crafted from scratch using the finest ingredients we can source.
+                </p>
+                <div class="pt-4 mt-6 border-t border-espresso/10 border-dashed">
+                    <h3 class="font-serif text-xl text-espresso mb-3">100% Eggless &amp; FSSAI Certified</h3>
+                    <p class="font-sans text-espresso/80 text-sm leading-relaxed">
+                        We understand the importance of dietary choices and cultural preferences. That's why our entire facility is strictly eggless. We take pride in our FSSAI certification, ensuring that every bite you take meets the highest standards of hygiene and quality.
+                    </p>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2 w-full relative" data-aos="fade-in" data-aos-delay="300">
+                <!-- Decorative background element -->
+                <div class="absolute inset-0 bg-blush/20 rounded-[32px] transform translate-x-4 translate-y-4 -z-10"></div>
+                <!-- FIX 2.1: Updated image path to /images/ (public folder) -->
+                <img src="/images/cake1.jpg" alt="Amore By Paridhi Creations" loading="eager" class="w-full h-full object-cover rounded-[32px] shadow-xl aspect-[4/5]">
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="mt-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest border-t border-espresso/10 bg-cream text-espresso gap-4 md:gap-0">
+        <div>&copy; 2026 AMORE BY PARIDHI | RAIPUR, CG</div>
+        <div class="text-espresso/80">FSSAI CERTIFIED</div>
+        <div>OPEN 11 AM - 7 PM</div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 w-12 h-12 bg-espresso text-cream rounded-full shadow-lg flex items-center justify-center translate-y-20 opacity-0 transition-all duration-300 z-50 hover:bg-espresso/80 focus:outline-none" aria-label="Back to Top">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- TASK 1.2: Vite module entry — required for Tailwind CSS to be processed and injected -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 20,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // ── Back to Top ──────────────────────────────────────────
+        const backToTopBtn = document.getElementById('back-to-top');
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Header shrink on scroll ───────────────────────────────
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('site-header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+                header.classList.replace('bg-cream/90', 'bg-cream');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.replace('bg-cream', 'bg-cream/90');
+            }
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        // ── Mobile Nav Toggle (FIX 2.3) ──────────────────────────
+        const hamburgerBtn  = document.getElementById('hamburger-btn');
+        const mobileNav     = document.getElementById('mobile-nav');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon     = document.getElementById('close-icon');
+        let navOpen = false;
+
+        function openMobileNav() {
+            navOpen = true;
+            mobileNav.classList.remove('hidden');
+            requestAnimationFrame(() => mobileNav.classList.add('open'));
+            hamburgerIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMobileNav() {
+            navOpen = false;
+            mobileNav.classList.remove('open');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            setTimeout(() => {
+                if (!navOpen) mobileNav.classList.add('hidden');
+            }, 300);
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            navOpen ? closeMobileNav() : openMobileNav();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navOpen && !document.getElementById('site-header').contains(e.target)) {
+                closeMobileNav();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && navOpen) closeMobileNav();
+        });
+    </script>
+</body>
+</html>

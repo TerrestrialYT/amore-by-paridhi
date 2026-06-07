@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amore By Paridhi | Bespoke Eggless Bakery in Raipur</title>
+    <meta name="description" content="Amore By Paridhi is a 100% eggless bespoke bakery in Raipur, Chhattisgarh. Order custom cakes, cookies, brownies, chocolates and more. Pre-order 2 days in advance.">
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amore By Paridhi | Bespoke Eggless Bakery in Raipur">
+    <meta property="og:description" content="100% Eggless. Pre-order your custom sweet treats 2 days in advance. Serving Raipur with love.">
+    <meta property="og:image" content="/images/cake1.jpg">
+    <meta property="og:url" content="https://terrestrialyt.github.io/Amore-By-Paridhi/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://terrestrialyt.github.io/Amore-By-Paridhi/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Vite / Tailwind CSS entry point -->
+    <link href="/src/index.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Body base — kept here as Tailwind classes on <body> may not cover background colour before CSS loads */
+        body {
+            background-color: #fdfbf7;
+            color: #4a332a;
+        }
+        .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1542826438-bd32f43d626f?q=80&w=2000&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Mobile nav overlay */
+        #mobile-nav {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #mobile-nav.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px);
+        }
+        #mobile-nav.open {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-espresso bg-cream selection:bg-blush selection:text-espresso flex flex-col min-h-screen">
+
+    <!-- ===================== HEADER ===================== -->
+    <header id="site-header" class="fixed w-full top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-espresso/10 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10">
+            <div class="flex justify-between items-center h-[70px]">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="./index.html" class="flex items-center space-x-3">
+                        <img src="/images/logo.jpg" alt="Amore By Paridhi Logo" class="h-14 w-auto object-contain rounded-full shadow-sm bg-white" onerror="this.onerror=null; this.src='https://placehold.co/200x200/fdfbf7/4a332a?text=Logo';">
+                        <span class="font-serif text-lg md:text-xl font-bold tracking-widest text-espresso uppercase hidden sm:block">Amore By Paridhi</span>
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="./index.html" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">Home</a>
+                    <a href="#menu" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">Menu</a>
+                    <a href="about.html" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">About Us</a>
+                    <a href="#contact" class="text-espresso hover:text-blush transition-colors text-xs font-semibold uppercase tracking-widest">Contact</a>
+                </nav>
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="bg-espresso text-cream px-6 py-2.5 rounded-full text-xs font-bold hover:bg-espresso/80 transition-colors shadow-sm uppercase tracking-widest">
+                        Order on Instagram
+                    </a>
+                </div>
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav" class="text-espresso focus:outline-none p-2 rounded-lg hover:bg-blush/20 transition-colors">
+                        <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Panel -->
+        <div id="mobile-nav" class="hidden md:hidden bg-cream border-t border-espresso/10 shadow-lg">
+            <nav class="max-w-[1400px] mx-auto px-4 py-6 flex flex-col space-y-4">
+                <a href="./index.html" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">Home</a>
+                <a href="#menu" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">Menu</a>
+                <a href="about.html" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">About Us</a>
+                <a href="#contact" onclick="closeMobileNav()" class="text-espresso hover:text-blush transition-colors text-sm font-semibold uppercase tracking-widest py-2 border-b border-espresso/5">Contact</a>
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="inline-block text-center bg-espresso text-cream px-6 py-3 rounded-full text-xs font-bold hover:bg-espresso/80 transition-colors shadow-sm uppercase tracking-widest mt-2">
+                    Order on Instagram
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================== MAIN GRID ===================== -->
+    <main class="flex-1 grid grid-cols-1 md:grid-cols-12 auto-rows-min gap-4 lg:gap-6 p-4 md:p-6 lg:p-10 pt-24 md:pt-28 lg:pt-32 max-w-[1400px] mx-auto w-full">
+
+        <!-- Hero Card -->
+        <section class="md:col-span-8 md:row-span-2 bg-white rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(74,51,42,0.05)] relative flex flex-col justify-center p-8 md:p-12 lg:p-16 parallax-bg" data-aos="fade-up" data-aos-duration="1000">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),repeating-conic-gradient(#f2c9cf_0_15deg,#ffffff_0_30deg)] mix-blend-overlay opacity-60"></div>
+            <div class="relative z-10 text-cream max-w-xl">
+                <span class="inline-block px-3 py-1 bg-blush text-espresso rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 shadow-sm">100% Eggless</span>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-6 leading-[1.1]">Baking with Love <br><span class="italic font-light">in Raipur.</span></h1>
+                <p class="font-sans text-cream/90 text-lg mb-8 max-w-md font-light leading-relaxed">100% Eggless. Pre-order your custom sweet treats 2 days in advance.</p>
+                <!-- FIX 2.2: was href="#order" (non-existent) — now correctly points to #contact -->
+                <a href="#contact" class="inline-block bg-white text-espresso px-8 py-3.5 rounded-full font-bold hover:bg-blush transition-all duration-300 uppercase tracking-widest text-xs shadow-lg transform hover:-translate-y-1">
+                    Order Now
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-choose-us" class="md:col-span-4 md:row-span-1 bg-white rounded-[24px] p-6 lg:p-8 border border-blush/40 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="font-serif text-3xl xl:text-4xl text-espresso mb-4 leading-tight">Serving Raipur <br>with <span class="italic text-blush relative z-10 w-fit inline-block">100% Eggless<span class="absolute bottom-1 left-0 w-full h-3 bg-blush/30 -z-10 -rotate-2"></span></span> perfection.</h2>
+            <p class="font-sans text-espresso/80 text-[13px] sm:text-sm leading-relaxed mb-6 flex-1">Every creation at Amore By Paridhi is crafted with the finest ingredients and boundless passion. We believe luxury lies in the details, from the perfect crumb to the elegant packaging.</p>
+
+            <div class="flex items-center justify-between mt-auto mb-6">
+                <p class="font-sans text-espresso font-semibold text-[11px] uppercase tracking-widest flex items-center">
+                    <svg class="h-4 w-4 mr-2 text-blush" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    OPEN 11 AM - 7 PM
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 relative h-40 xl:h-56 mt-4">
+                <img src="/images/cake1.jpg" alt="Artisanal baked treat" loading="eager" class="w-full h-full object-cover rounded-xl shadow-md transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 border-4 border-white">
+                <img src="/images/cake2.jpg" alt="Elegant white floral cake" loading="eager" class="w-full h-full object-cover rounded-xl shadow-md transform rotate-2 translate-y-3 hover:rotate-0 hover:translate-y-0 hover:scale-105 transition-all duration-300 border-4 border-white">
+            </div>
+        </section>
+
+        <!-- Instagram Grid Card -->
+        <div class="md:col-span-4 md:row-span-1 bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex justify-between items-center mb-6 text-[10px] sm:text-[11px] uppercase font-bold text-espresso tracking-widest">
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="hover:text-blush transition-colors">@amore_byparidhi</a>
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="hover:text-blush transition-colors">Instagram</a>
+            </div>
+
+            <div class="grid grid-cols-2 grid-rows-2 gap-2 flex-1 min-h-[180px] xl:min-h-[220px]">
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="aspect-square relative group overflow-hidden block rounded-xl bg-espresso/5">
+                    <img src="/images/cake3.jpg" alt="Pastry" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 scale-125 -translate-y-3 group-hover:scale-150 group-hover:-translate-y-4">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="aspect-square relative group overflow-hidden block rounded-xl bg-espresso/5">
+                    <img src="/images/cake4.jpg" alt="Cake" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="aspect-square relative group overflow-hidden block rounded-xl bg-espresso/5">
+                    <img src="/images/cake5.jpg" alt="Cookies" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="aspect-square relative group overflow-hidden block rounded-xl bg-espresso/5">
+                    <img src="/images/cake6.jpg" alt="Bakery items" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-cream" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section Title: Handcrafted Sweet Treats -->
+        <!-- FIX 4.1: Added scroll-mt-24 so fixed header doesn't overlap this anchor -->
+        <div class="md:col-span-12 flex flex-col items-center justify-center pt-8 pb-4" data-aos="fade-in" data-aos-delay="200">
+            <h2 id="menu" class="font-serif text-3xl md:text-4xl text-espresso mb-4 scroll-mt-24">Handcrafted Sweet Treats</h2>
+            <div class="w-16 h-0.5 bg-blush"></div>
+        </div>
+
+        <!-- Offer 1: Customized Cakes -->
+        <section class="md:col-span-4 bg-white rounded-[24px] p-6 lg:p-8 border border-espresso/5 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 hover:shadow-xl" data-aos="fade-in" data-aos-delay="300">
+            <div>
+                <!-- FIX 4.2: Removed skeleton + onload race condition; using loading="lazy" and simple bg placeholder -->
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden mb-6 bg-blush/20">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800&auto=format&fit=crop" alt="Customized Cakes" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000">
+                </div>
+                <h3 class="font-serif text-2xl text-espresso mb-3">Customized Cakes</h3>
+                <p class="text-espresso/70 text-[13px] sm:text-sm leading-relaxed mb-4">Bespoke designs and exquisite flavors tailored for your special occasions.</p>
+            </div>
+        </section>
+
+        <!-- Offer 2: Cookies & Brownies -->
+        <section class="md:col-span-4 bg-white rounded-[24px] p-6 lg:p-8 border border-espresso/5 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 hover:shadow-xl" data-aos="fade-in" data-aos-delay="400">
+            <div>
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden mb-6 bg-blush/20">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=800&auto=format&fit=crop" alt="Cookies &amp; Brownies" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000">
+                </div>
+                <h3 class="font-serif text-2xl text-espresso mb-3">Cookies &amp; Brownies</h3>
+                <p class="text-espresso/70 text-[13px] sm:text-sm leading-relaxed mb-4">Gooey, rich, and perfectly baked treats to satisfy any sweet craving.</p>
+            </div>
+        </section>
+
+        <!-- Offer 3: Chocolates -->
+        <section class="md:col-span-4 bg-white rounded-[24px] p-6 lg:p-8 border border-espresso/5 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 hover:shadow-xl" data-aos="fade-in" data-aos-delay="450">
+            <div>
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden mb-6 bg-blush/20">
+                    <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=800&auto=format&fit=crop" alt="Chocolates" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000">
+                </div>
+                <h3 class="font-serif text-2xl text-espresso mb-3">Chocolates</h3>
+                <p class="text-espresso/70 text-[13px] sm:text-sm leading-relaxed mb-4">Handcrafted artisanal chocolates made with premium ingredients.</p>
+            </div>
+        </section>
+
+        <!-- Offer 4: Tea Cakes & Desserts -->
+        <section class="md:col-span-4 bg-white rounded-[24px] p-6 lg:p-8 border border-espresso/5 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 hover:shadow-xl" data-aos="fade-in" data-aos-delay="500">
+            <div>
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden mb-6 bg-blush/20">
+                    <img src="/images/cake8.jpg" alt="Tea Cakes &amp; Desserts" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000">
+                </div>
+                <h3 class="font-serif text-2xl text-espresso mb-3">Tea Cakes &amp; Desserts</h3>
+                <p class="text-espresso/70 text-[13px] sm:text-sm leading-relaxed mb-4">A fine selection of exquisite dessert jars, puddings, aromatic loaf cakes, and creamy delights.</p>
+            </div>
+        </section>
+
+        <!-- Offer 5: Pancakes -->
+        <section class="md:col-span-4 bg-white rounded-[24px] p-6 lg:p-8 border border-espresso/5 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 hover:shadow-xl" data-aos="fade-in" data-aos-delay="550">
+            <div>
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden mb-6 bg-blush/20">
+                    <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=800&auto=format&fit=crop" alt="Pancakes" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000">
+                </div>
+                <h3 class="font-serif text-2xl text-espresso mb-3">Pancakes</h3>
+                <p class="text-espresso/70 text-[13px] sm:text-sm leading-relaxed mb-4">Fluffy mini pancakes loaded with Nutella, berries, and sweet syrups.</p>
+            </div>
+        </section>
+
+        <!-- Offer 6: Custom Gift Hampers -->
+        <section class="md:col-span-4 bg-white rounded-[24px] p-6 lg:p-8 border border-espresso/5 shadow-[0_4px_20px_rgba(74,51,42,0.05)] flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300 hover:shadow-xl" data-aos="fade-in" data-aos-delay="600">
+            <div>
+                <div class="aspect-[4/3] w-full rounded-2xl overflow-hidden mb-6 bg-blush/20">
+                    <img src="/images/cake7.jpg" alt="Gift Hampers" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000">
+                </div>
+                <h3 class="font-serif text-2xl text-espresso mb-3">Custom Gift Hampers</h3>
+                <p class="text-espresso/70 text-[13px] sm:text-sm leading-relaxed mb-4">Curated boxes of joy, elegantly packaged for gifting your loved ones.</p>
+            </div>
+        </section>
+
+        <!-- Section Title: Get In Touch -->
+        <div class="md:col-span-12 flex flex-col items-center justify-center pt-16 pb-4" data-aos="fade-in" data-aos-delay="200">
+            <!-- FIX 4.1: scroll-mt-24 added for fixed header offset -->
+            <h2 id="contact" class="font-serif text-3xl md:text-4xl text-espresso mb-4 scroll-mt-24">Get In Touch</h2>
+            <div class="w-16 h-0.5 bg-blush"></div>
+        </div>
+
+        <!-- Contact Section -->
+        <section class="md:col-span-12 bg-white rounded-[24px] p-8 md:p-12 lg:p-16 border border-blush/40 shadow-[0_4px_20px_rgba(74,51,42,0.05)] w-full relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <!-- Decorative accent -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blush/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 relative z-10 w-full text-center md:text-left">
+                <!-- Info Left -->
+                <div class="flex flex-col justify-center">
+                    <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl text-espresso mb-6">Let's create something <br><span class="italic text-blush">sweet.</span></h3>
+                    <p class="font-sans text-espresso/80 text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto md:mx-0">Have a custom cake inquiry or want to order our sweet treats? Reach out to us. We'd love to bake for your next celebration.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-center md:justify-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-blush/30 flex items-center justify-center text-espresso flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-espresso mb-0.5">Location</h4>
+                                <p class="text-sm text-espresso/70">Raipur, Chhattisgarh</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center md:justify-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-blush/30 flex items-center justify-center text-espresso flex-shrink-0">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-espresso mb-0.5">Instagram</h4>
+                                <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="text-sm text-espresso/70 hover:text-blush transition-colors">@amore_byparidhi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Right -->
+                <div class="flex flex-col items-center justify-center bg-cream/50 rounded-2xl p-8 border border-espresso/5 shadow-sm space-y-6">
+                    <div class="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center -translate-y-4">
+                       <svg class="w-8 h-8 text-[#E1306C]" fill="currentColor" viewBox="0 0 24 24">
+                           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                       </svg>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-serif text-2xl text-espresso mb-2">Message Us</h4>
+                        <p class="font-sans text-espresso/80 text-sm mb-6">Drop us a DM on Instagram to place your order or ask any questions.</p>
+                        <a href="https://www.instagram.com/amore_byparidhi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition-all duration-300 uppercase tracking-widest text-xs shadow-lg shadow-[#bc1888]/20 transform hover:-translate-y-1">
+                            DM on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="mt-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest border-t border-espresso/10 bg-cream text-espresso gap-4 md:gap-0">
+        <div>&copy; 2026 AMORE BY PARIDHI | RAIPUR, CG</div>
+        <div class="text-espresso/80">FSSAI CERTIFIED</div>
+        <div>OPEN 11 AM - 7 PM</div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 w-12 h-12 bg-espresso text-cream rounded-full shadow-lg flex items-center justify-center translate-y-20 opacity-0 transition-all duration-300 z-50 hover:bg-espresso/80 focus:outline-none" aria-label="Back to Top">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- TASK 1.2: Vite module entry — required for Tailwind CSS to be processed and injected -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+        AOS.init({
+            once: true,
+            offset: 20,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // ── Back to Top ──────────────────────────────────────────
+        const backToTopBtn = document.getElementById('back-to-top');
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Header shrink + Back-to-top visibility on scroll ─────
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('site-header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+                header.classList.replace('bg-cream/90', 'bg-cream');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.replace('bg-cream', 'bg-cream/90');
+            }
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        // ── Mobile Nav Toggle (FIX 2.3) ──────────────────────────
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileNav    = document.getElementById('mobile-nav');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon     = document.getElementById('close-icon');
+        let navOpen = false;
+
+        function openMobileNav() {
+            navOpen = true;
+            mobileNav.classList.remove('hidden');
+            // force reflow then add open class for transition
+            requestAnimationFrame(() => mobileNav.classList.add('open'));
+            hamburgerIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMobileNav() {
+            navOpen = false;
+            mobileNav.classList.remove('open');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            // hide after transition ends
+            setTimeout(() => {
+                if (!navOpen) mobileNav.classList.add('hidden');
+            }, 300);
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            navOpen ? closeMobileNav() : openMobileNav();
+        });
+
+        // Close nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navOpen && !document.getElementById('site-header').contains(e.target)) {
+                closeMobileNav();
+            }
+        });
+
+        // Close nav on window resize past mobile breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && navOpen) closeMobileNav();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fdfbf7;
+  --color-espresso: #4a332a;
+  --color-blush: #f2c9cf;
+
+  --font-sans: "Inter", "sans-serif";
+  --font-serif: "Playfair Display", "serif";
+}
